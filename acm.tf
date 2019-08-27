@@ -3,7 +3,7 @@ resource "aws_acm_certificate" "main" {
 
   validation_method = "DNS"
 
-  tags {
+  tags = {
     Name        = "${var.application}.${lookup(var.env_dns_zones_prefix, terraform.workspace)}${var.domain}"
     Workspace   = "${terraform.workspace}"
     Environment = "${lookup(var.env_names, terraform.workspace)}"
