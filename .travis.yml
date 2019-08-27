@@ -2,7 +2,7 @@ language: generic
 
 env:
   global:
-    - TERRAFORM_VERSION=0.11.11
+    - TERRAFORM_VERSION=0.12.7
     - TERRAFORM_PATH=$HOME/bin
 
 before_install:

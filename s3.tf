@@ -6,7 +6,7 @@ resource "aws_s3_bucket" "main" {
     index_document = "index.html"
   }
 
-  tags {
+  tags = {
     Application = "${var.application}"
     Environment = "${lookup(var.env_names, terraform.workspace)}"
     Workspace   = "${terraform.workspace}"

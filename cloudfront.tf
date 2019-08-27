@@ -20,7 +20,7 @@ resource "aws_cloudfront_distribution" "main" {
     default_ttl = 86400
     max_ttl     = 31536000
 
-    forwarded_values = {
+    forwarded_values {
       query_string = false
 
       cookies {
@@ -75,7 +75,7 @@ resource "aws_cloudfront_distribution" "main" {
     ssl_support_method             = "sni-only"
   }
 
-  tags {
+  tags = {
     Workspace   = "${terraform.workspace}"
     Environment = "${lookup(var.env_names, terraform.workspace)}"
     App         = "${var.application}"
